@@ -1,0 +1,52 @@
+/* =========================================================================
+   QwenWave — global stylesheet
+   Component styles live in src/ui/styles.css (imported by index.html);
+   this file holds the app frame, responsive rules and fine polish.
+   ========================================================================= */
+
+html, body { height: 100%; }
+body { overscroll-behavior: none; }
+
+#app { height: 100vh; }
+
+/* keep dense UI readable on small screens */
+@media (max-width: 1280px) {
+  :root { --hdr: 48px; }
+  .brand-sub { display: none; }
+  .app-body { grid-template-columns: 232px 1fr; }
+}
+@media (max-width: 1024px) {
+  .topbar { gap: 6px; padding: 0 8px; overflow-x: auto; }
+  .topbar .brand { display: none; }
+  .app-body { grid-template-columns: 200px 1fr; }
+  .chan { width: 74px; }
+}
+@media (max-width: 780px) {
+  .app-body { grid-template-columns: 0 1fr; }
+  .browser { position: absolute; z-index: 60; width: 280px; height: calc(100vh - var(--hdr) - 26px);
+             transform: translateX(-100%); transition: transform .18s; }
+  .browser.open { transform: none; box-shadow: var(--shadow); }
+}
+
+/* focus visibility for keyboard users */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); }
+
+/* subtle scroll shadows for deep panels */
+.tab-body, .rack-items, .rack-params, .inspector, .bottom-panel {
+  scrollbar-gutter: stable;
+}
+
+/* prevent accidental text selection while dragging clips/notes */
+.clip, .pr-notes, .knob, .fader { touch-action: none; }
+
+/* high-density tweak: tighter lane headers when many tracks */
+.app-main[data-dense="1"] { --track-h: 58px; }
+
+/* print: nothing useful, hide the studio */
+@media print { body { display: none; } }
+
+/* reduce motion for users who ask for it */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

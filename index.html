@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="QwenWave — полноценная веб-DAW: многодорожечная запись, MIDI/Piano Roll, библиотека сэмплов, FX-цепочки, мастеринг, экспорт и плагины.">
+<title>QwenWave — Web DAW</title>
+<link rel="stylesheet" href="src/ui/styles.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%2359c8ff'/><stop offset='1' stop-color='%23b28dff'/></linearGradient></defs><rect width='32' height='32' rx='7' fill='url(%23g)'/><g fill='%2306131c'><rect x='6' y='15' width='3' height='8' rx='1.5'/><rect x='11' y='10' width='3' height='13' rx='1.5'/><rect x='16' y='6' width='3' height='17' rx='1.5'/><rect x='21' y='12' width='3' height='11' rx='1.5'/></g></svg>">
+</head>
+<body>
+
+<div class="splash" id="splash">
+  <div class="splash-inner">
+    <div class="splash-logo">Q</div>
+    <h1>QWENWAVE</h1>
+    <p>WEB DAW · STUDIO ENGINE</p>
+    <div class="progress"><i id="splash-bar"></i></div>
+    <div class="splash-status" id="splash-status">Инициализация…</div>
+  </div>
+</div>
+
+<div id="app"></div>
+
+<noscript>
+  <div style="padding:40px;text-align:center;font-family:system-ui;color:#e7eef7">
+    Для работы QwenWave требуется JavaScript и современный браузер (Chrome / Edge / Firefox / Safari 16.4+).
+  </div>
+</noscript>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "qwenwave",
+  "version": "1.0.0",
+  "private": true,
+  "description": "QwenWave — a full-featured web DAW (multi-track recording, MIDI/piano roll, sample library, FX chains, mastering, export, plugin hosting).",
+  "type": "module",
+  "scripts": {
+    "serve": "python3 serve.py --no-browser",
+    "test": "python3 tests/smoke.py && python3 tests/functional.py",
+    "bake-library": "python3 tools/synth_lib.py",
+    "check": "node tools/parse-check.mjs $(find src worklet -name '*.js') && node tools/check-imports.mjs"
+  },
+  "devDependencies": {
+    "acorn": "^8.11.0",
+    "acorn-walk": "^8.3.0"
+  }
+}
